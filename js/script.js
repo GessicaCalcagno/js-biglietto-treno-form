@@ -38,8 +38,13 @@ sendBtnElem.addEventListener("click", function () {
     // ESECUZIONE DEL PROGRAMMA
     //PARTE LOGICA 
     //Scope di blocco
-    if (isNaN(kmValue) === false && isNaN(ageValue) === false && kmValue > 0 && ageValue > 0) {
+    // if (isNaN(kmValue) === false && isNaN(ageValue) === false && kmValue > 0 && ageValue > 0) {
 
+    if (!isNaN(kmValue) || !isNaN(ageValue) || kmValue < 0 || ageValue < 0) {
+        // Se i dati sono sbagliati
+        alert("Dati errati!!!");
+    }
+    else {
         let ticketBase = kmValue * 0.21;// number
         console.log(ticketBase, typeof ticketBase);
 
@@ -70,7 +75,7 @@ sendBtnElem.addEventListener("click", function () {
         document.getElementById("result").innerHTML = resultMessage;
     }
 
-});
+})
 
 
 
