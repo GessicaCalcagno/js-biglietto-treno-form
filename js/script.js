@@ -76,9 +76,9 @@ sendBtnElem.addEventListener("click", function () {
             var discountMessageElement = document.getElementById('discountMessage');
             discountMessageElement.textContent = "Biglietto scontato del 20%";
         }
-        
-         // Se lo sconto è uguale a 40%, stampa un messaggio
-         if (discount === 40) {
+
+        // Se lo sconto è uguale a 40%, stampa un messaggio
+        if (discount === 40) {
             var discountMessageElement = document.getElementById('discountMessage');
             discountMessageElement.textContent = "Biglietto scontato del 40%";
         }
@@ -88,8 +88,17 @@ sendBtnElem.addEventListener("click", function () {
             var discountMessageElement = document.getElementById('discountMessage');
             discountMessageElement.textContent = "Biglietto standard";
         }
-        
-        
+
+        //Creo un numero random della carrozza a partire da 1
+        let wagonNumber = Math.floor(Math.random() * 9) + 1;
+        console.log("Creazione numero di carrozza:", wagonNumber);
+        document.getElementById("wagon").innerHTML = wagonNumber;
+
+        //Creo numero random di 5 cifre per il codice CP
+        let cpCode = Math.floor(Math.random() * 10000) + 90000;
+        console.log("Creazione numero CP:", cpCode);
+        document.getElementById("cp-code").innerHTML = cpCode;
+
 
 
 
