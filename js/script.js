@@ -73,19 +73,19 @@ sendBtnElem.addEventListener("click", function () {
 
         // Se lo sconto è uguale a 20%, stampa un messaggio
         if (discount === 20) {
-            var discountMessageElement = document.getElementById('discountMessage');
+            let discountMessageElement = document.getElementById('discountMessage');
             discountMessageElement.textContent = "Biglietto scontato del 20%";
         }
 
         // Se lo sconto è uguale a 40%, stampa un messaggio
         if (discount === 40) {
-            var discountMessageElement = document.getElementById('discountMessage');
+            let discountMessageElement = document.getElementById('discountMessage');
             discountMessageElement.textContent = "Biglietto scontato del 40%";
         }
 
         // Se lo sconto è uguale a 0 = biglietto standard
         if (discount === 0) {
-            var discountMessageElement = document.getElementById('discountMessage');
+            let discountMessageElement = document.getElementById('discountMessage');
             discountMessageElement.textContent = "Biglietto standard";
         }
 
