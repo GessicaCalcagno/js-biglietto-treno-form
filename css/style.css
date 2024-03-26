@@ -1,0 +1,105 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/************************************************
+        CONTAINER E WRAPPER MAIN
+ ************************************************/
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 90%;
+    padding: 20px;
+    background-color: #B91450;
+    border-radius: 20px;
+}
+
+/* --------------------------------------- */
+
+
+/************************************************
+    UTILITIES
+ ************************************************/
+.white {
+    color: white;
+}
+.pd-bt{
+    padding-bottom: 10px;
+}
+.pd-top{
+    padding-top: 10px;
+}
+
+.bold{
+    font-weight:  bold;
+}
+
+.btn-outline-danger{
+    color: #B91450;
+    border-color: #B91450;
+}
+
+input{
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+/************************************************
+    SECTION TOP
+ ************************************************/
+h2 {
+    text-align: center;
+}
+
+.section-top,
+.section-bottom{
+    background-color: white;
+    color: #B91450;
+    border-radius: 20px;
+}
+
+.question{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 10px 30px 10px;
+}
+.user-data{
+    width: 30%;
+}
+
+/* BUTTONS TOP */
+.btn-top{
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    padding-bottom: 10px;
+}
+
+
+/************************************************
+    SECTION BOTTOM
+ ************************************************/
+.ticket-container{
+    padding: 10px;
+    color: black;
+}
+
+.wrapper-ticket{
+    border: 1px solid;
+}
+
+.name-passenger{
+    background-color: gray;
+    padding: 10px 10px 10px 10px;
+    margin-right: 5px;
+    width: 250px;
+}
+
+

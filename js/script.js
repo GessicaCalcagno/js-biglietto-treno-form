@@ -40,9 +40,9 @@ sendBtnElem.addEventListener("click", function () {
     //Scope di blocco
     // if (isNaN(kmValue) === false && isNaN(ageValue) === false && kmValue > 0 && ageValue > 0) {
 
-    if (!isNaN(kmValue) || !isNaN(ageValue) || kmValue < 0 || ageValue < 0) {
+    if (isNaN(kmValue) || isNaN(ageValue) || kmValue < 0 || ageValue < 0) {
         // Se i dati sono sbagliati
-        alert("Dati errati!!!");
+        alert("Dati errati!");
     }
     else {
         let ticketBase = kmValue * 0.21;// number
@@ -68,11 +68,36 @@ sendBtnElem.addEventListener("click", function () {
         console.log(finalTicket)
 
         // OUTPUT
+        // creazione dato del prezzo nella tabella
+        document.getElementById("price").innerHTML = finalTicket + "€";
+
+        // Se lo sconto è uguale a 20%, stampa un messaggio
+        if (discount === 20) {
+            var discountMessageElement = document.getElementById('discountMessage');
+            discountMessageElement.textContent = "Biglietto scontato del 20%";
+        }
+        
+         // Se lo sconto è uguale a 20%, stampa un messaggio
+         if (discount === 40) {
+            var discountMessageElement = document.getElementById('discountMessage');
+            discountMessageElement.textContent = "Biglietto scontato del 40%";
+        }
+
+        // Se lo sconto è uguale a 20%, stampa un messaggio
+        if (discount === 0) {
+            var discountMessageElement = document.getElementById('discountMessage');
+            discountMessageElement.textContent = "Biglietto standard";
+        }
+        
+        
+
+
+
         // Preparo il messaggio
-        const resultMessage = `Il Biglietto costa: ${finalTicket} € perché ${discount}.`;
+        //const resultMessage = `Il Biglietto costa: ${finalTicket} € perché ${discount}.`;
 
         // Stampo il risultato della somma in pagina
-        document.getElementById("result").innerHTML = resultMessage;
+        //document.getElementById("result").innerHTML = resultMessage;
     }
 
 })
