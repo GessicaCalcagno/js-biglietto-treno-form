@@ -13,13 +13,15 @@ sendBtnElem.addEventListener("click", function () {
 
     // BLOCCO RACCOLTA DEI DATI 
     //Scope globale
+
     // username
     const nameInputElem = document.getElementById("username"); // object | null
-    console.log(nameInputElem);
+    console.log("Nome del passeggero:", nameInputElem);
     //controllo il valore dell'input con label username
     const nameValue = nameInputElem.value; // string
     console.log(nameValue);
     // ----
+
     // kilometri
     let kmInputElem = document.getElementById("kilometri"); // object | null
     console.log(kmInputElem);
@@ -27,16 +29,17 @@ sendBtnElem.addEventListener("click", function () {
     let kmValue = parseInt(kmInputElem.value); // number
     console.log(kmValue, typeof kmValue);
     // ---
+
     //user-age
     let ageInputElem = document.getElementById("user-age"); // object | null
     console.log(ageInputElem);
     //controllo il valore dell'input con label user-age e cambio la stringa in number
     let ageValue = parseInt(ageInputElem.value); // number
     console.log(ageValue, typeof ageValue);
-
+    //-----------------------------
 
     // ESECUZIONE DEL PROGRAMMA
-    //PARTE LOGICA 
+    //3- PARTE LOGICA 
     //Scope di blocco
     // if (isNaN(kmValue) === false && isNaN(ageValue) === false && kmValue > 0 && ageValue > 0) {
 
@@ -67,7 +70,9 @@ sendBtnElem.addEventListener("click", function () {
         let finalTicket = finalPrice.toFixed(2); //String
         console.log(finalTicket)
 
-        // OUTPUT
+
+        //-----------------------------
+        //4- OUTPUT
         // creazione dato del prezzo nella tabella
         document.getElementById("price").innerHTML = finalTicket + "€";
 
@@ -89,24 +94,31 @@ sendBtnElem.addEventListener("click", function () {
             discountMessageElement.textContent = "Biglietto standard";
         }
 
+
         //Creo un numero random della carrozza a partire da 1
         let wagonNumber = Math.floor(Math.random() * 9) + 1;
         console.log("Creazione numero di carrozza:", wagonNumber);
         document.getElementById("wagon").innerHTML = wagonNumber;
 
-        //Creo numero random di 5 cifre per il codice CP
+
+        //Moltiplicando Math.random() per 90.000 otteniamo un numero casuale compreso tra 0 (incluso) e 90.000 (escluso).
+        //Aggiungendo 10.000 al risultato otteniamo un numero compreso tra 10.000 e 100.000.
+        //Il risultato è un numero casuale compreso tra 10.000 e 99.999, ovvero un numero di 5 cifre.
+        //Math.floor() arrotonda il risultato verso il basso per ottenere un numero intero.
+
+        //Creo numero random di 5 cifre per il codice CP e la stampo
         let cpCode = Math.floor(Math.random() * 10000) + 90000;
         console.log("Creazione numero CP:", cpCode);
         document.getElementById("cp-code").innerHTML = cpCode;
 
+        //Stampo la variabile nome passeggero
+        document.getElementById("passenger").innerHTML = nameValue;
 
+        // Preparo il messaggio finale del biglietto
+        const resultMessage = `Il Biglietto di base costa: ${ticketBase}€ Il prezzo finale è di: ${finalTicket}€ perché hai ottenuto lo sconto del ${discount}%`;
 
-
-        // Preparo il messaggio
-        //const resultMessage = `Il Biglietto costa: ${finalTicket} € perché ${discount}.`;
-
-        // Stampo il risultato della somma in pagina
-        //document.getElementById("result").innerHTML = resultMessage;
+        // Stampo il risultato della somma con il messaggio finale in pagina (section-top)
+        document.getElementById("result").innerHTML = resultMessage;
     }
 
 })

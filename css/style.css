@@ -31,12 +31,6 @@
 .white {
     color: white;
 }
-.pd-bt{
-    padding-bottom: 10px;
-}
-.pd-top{
-    padding-top: 10px;
-}
 
 .bold{
     font-weight:  bold;
@@ -54,6 +48,10 @@ input{
 /************************************************
     SECTION TOP
  ************************************************/
+ #result{
+    text-align: center;
+    padding-bottom: 10px;
+ }
 h2 {
     text-align: center;
 }
@@ -68,7 +66,7 @@ h2 {
 .question{
     display: flex;
     justify-content: space-around;
-    padding: 10px 10px 30px 10px;
+    padding: 10px 10px 20px 10px;
 }
 .user-data{
     width: 30%;

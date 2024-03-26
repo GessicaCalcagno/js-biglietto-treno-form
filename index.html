@@ -16,8 +16,8 @@
 <body>
     <div class="wrapper">
         <div class="container">
-            <!-- TITOLO -->
-            <h2 class="white pd-bt">CALCOLA IL PREZZO DEL BIGLIETTO</h2>
+            <!-- SECTION TOP -->
+            <h2 class="white p-3">CALCOLA IL PREZZO DEL BIGLIETTO</h2>
             <section class="section-top">
                 <div class="question">
                     <div class="user-data">
@@ -26,6 +26,7 @@
                         </div>
                         <input type="text" id="username">
                     </div>
+
                     <div class="user-data">
                         <div>
                             <label class="bold" for="kilometri">Km da percorrere</label>
@@ -35,11 +36,13 @@
 
                     <div class="user-data">
                         <div>
-                            <label class="bold" for="user-age">Fascia d'età</label>
+                            <label class="bold" for="user-age">Età</label>
                         </div>
                         <input type="number" id="user-age">
                     </div>
                 </div>
+
+                <div id="result"></div>
 
                 <div class="btn-top">
                     <button class="btn btn-outline-danger" id="send-btn">Invia</button>
@@ -47,35 +50,35 @@
                 </div>
             </section>
 
-            <!-- TITOLO -->
-            <h2 class="white pd-top">IL TUO BIGLIETTO</h2>
+            <!-- SECTION TICKET BOTTOM -->
+            <h2 class="white p-3">IL TUO BIGLIETTO</h2>
             <section class="section-bottom">
                 <div class="ticket-container">
                     <h4>DETTAGLI PASSEGGERO</h4>
                     <hr>
                     <div class="wrapper-ticket d-flex">
                         <div class="name-passenger">
-                            <h6 class="bold">NOME PASSEGGERO</h3>
-                            <span class="bold">John Snow</span>
+                            <h6 class="bold white">NOME PASSEGGERO</h3>
+                                <span id="passenger" class="bold  "></span>
                         </div>
                         <table class="table">
                             <thead>
                                 <tr>
-                                <th scope="col">Offerta</th>
-                                <th scope="col">Carrozza</th>
-                                <th scope="col">Codice CP</th>
-                                <th scope="col">Costo biglietto</th>
-                              </tr>
+                                    <th scope="col">Offerta</th>
+                                    <th scope="col">Carrozza</th>
+                                    <th scope="col">Codice CP</th>
+                                    <th scope="col">Costo biglietto</th>
+                                </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td class="" id="discountMessage"></td>
-                                <td id="wagon"></td>
-                                <td id="cp-code"></td>
-                                <td id="price" ></td>
-                              </tr>
+                                <tr>
+                                    <td class="" id="discountMessage"></td>
+                                    <td id="wagon"></td>
+                                    <td id="cp-code"></td>
+                                    <td id="price"></td>
+                                </tr>
                             </tbody>
-                          </table>
+                        </table>
                     </div>
                 </div>
 
