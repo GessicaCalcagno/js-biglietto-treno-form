@@ -1,6 +1,12 @@
 // TEST
 //alert('ciao')
 
+//************************************************ */
+// Lo usiamo come controllo alla fine se c'è qualche problema di sintassi! COMMENTALO SE ANCORA STAI LAVORANDO SUL CODICE
+"use strict";
+//**************************************************** */
+
+
 
 //1- TROVO IL BTN NELLA PAGINA
 const sendBtnElem = document.getElementById("send-btn"); // object | null
@@ -26,7 +32,7 @@ sendBtnElem.addEventListener("click", function () {
     let kmInputElem = document.getElementById("kilometri"); // object | null
     console.log(kmInputElem);
     //controllo il valore dell'input con label kilometri e cambio la stringa in number
-    let kmValue = parseInt(kmInputElem.value); // number
+    let kmValue = parseInt(kmInputElem.value); // number | NaN
     console.log(kmValue, typeof kmValue);
     // ---
 
@@ -70,6 +76,22 @@ sendBtnElem.addEventListener("click", function () {
         let finalTicket = finalPrice.toFixed(2); //String
         console.log(finalTicket)
 
+        //Creo un numero random della carrozza a partire da 1
+        let wagonNumber = Math.floor(Math.random() * 9) + 1;
+        console.log("Creazione numero di carrozza:", wagonNumber);
+        document.getElementById("wagon").innerHTML = wagonNumber;
+
+
+        //Moltiplicando Math.random() per 90.000 otteniamo un numero casuale compreso tra 0 (incluso) e 90.000 (escluso).
+        //Aggiungendo 10.000 al risultato otteniamo un numero compreso tra 10.000 e 100.000.
+        //Il risultato è un numero casuale compreso tra 10.000 e 99.999, ovvero un numero di 5 cifre.
+        //Math.floor() arrotonda il risultato verso il basso per ottenere un numero intero.
+
+        //Creo numero random di 5 cifre per il codice CP e la stampo
+        let cpCode = Math.floor(Math.random() * 10000) + 90000;
+        console.log("Creazione numero CP:", cpCode);
+        document.getElementById("cp-code").innerHTML = cpCode;
+
 
         //-----------------------------
         //4- OUTPUT
@@ -95,27 +117,13 @@ sendBtnElem.addEventListener("click", function () {
         }
 
 
-        //Creo un numero random della carrozza a partire da 1
-        let wagonNumber = Math.floor(Math.random() * 9) + 1;
-        console.log("Creazione numero di carrozza:", wagonNumber);
-        document.getElementById("wagon").innerHTML = wagonNumber;
-
-
-        //Moltiplicando Math.random() per 90.000 otteniamo un numero casuale compreso tra 0 (incluso) e 90.000 (escluso).
-        //Aggiungendo 10.000 al risultato otteniamo un numero compreso tra 10.000 e 100.000.
-        //Il risultato è un numero casuale compreso tra 10.000 e 99.999, ovvero un numero di 5 cifre.
-        //Math.floor() arrotonda il risultato verso il basso per ottenere un numero intero.
-
-        //Creo numero random di 5 cifre per il codice CP e la stampo
-        let cpCode = Math.floor(Math.random() * 10000) + 90000;
-        console.log("Creazione numero CP:", cpCode);
-        document.getElementById("cp-code").innerHTML = cpCode;
+        
 
         //Stampo la variabile nome passeggero
         document.getElementById("passenger").innerHTML = nameValue;
 
         // Preparo il messaggio finale del biglietto
-        const resultMessage = `Il Biglietto di base costa: ${ticketBase}€ Il prezzo finale è di: ${finalTicket}€ perché hai ottenuto lo sconto del ${discount}%`;
+        const resultMessage = `Il Biglietto di base costa: ${ticketBase}€ <br> Il prezzo finale è di: ${finalTicket}€ perché hai ottenuto lo sconto del ${discount}%`;
 
         // Stampo il risultato della somma con il messaggio finale in pagina (section-top)
         document.getElementById("result").innerHTML = resultMessage;
